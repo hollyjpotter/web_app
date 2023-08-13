@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ appName }}</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+</head>
+
+<body ng-controller="MainController">
+  <!-- Header -->
+  <div id="header">
+    <h1>{{ appName }}</h1>
+  </div>
+
+  <!-- Content -->
+  <div id="content" ng-view></div>
+
+  <!-- Footer -->
+  <div id="footer">
+    <p>Current Date: {{ currentDate }}</p>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
