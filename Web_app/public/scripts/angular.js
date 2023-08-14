@@ -25,8 +25,25 @@ app.config(function ($routeProvider, $locationProvider) {
 
     // Setup the $routeProvider using .when() for each route
     // Add your route configurations here
-    $routeProvider.when('/about', {
-        templateUrl : 'about.html', // Use the about.html template
-        controller : 'AboutController' // Optional: Define a controller if needed
-    });
+    $routeProvider
+        .when('/', {
+            templateUrl: 'pages/home.html',
+            controller: 'HomeController'
+        })
+        .when('/about', {
+            templateUrl: 'pages/about.html',
+            controller: 'AboutController'
+        })
+        .when('/data', {
+            templateUrl: 'pages/data.html',
+            controller: 'DataController'
+        })
+        .when('/contactUs', {
+            templateUrl: 'pages/contactUs.html',
+            controller: 'ContactController'
+        })
+        .when('/animals', {
+            templateUrl: 'pages/animals.html',
+            controller: 'AnimalsController'
+        });
 });
