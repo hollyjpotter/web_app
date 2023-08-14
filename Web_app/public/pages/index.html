@@ -1,49 +1,38 @@
-<!--
 <!DOCTYPE html>
 <html ng-app="myApp">
-<head>
-  <meta charset="UTF-8">
-  <title>{{ appName }}</title>
-  &lt;!&ndash; Include AngularJS library (adjust the URL if needed) &ndash;&gt;
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
-  <script src="app.js"></script> &lt;!&ndash; Your AngularJS application script &ndash;&gt;
-</head>
-<body>
-<div id="header">
-  <h1>{{ appName }}</h1>
-</div>
-&lt;!&ndash; Other AngularJS content goes here &ndash;&gt;
-</body>
-</html>
--->
-<!DOCTYPE html>
-<html>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ applicationName }}</title>
+  <!-- Set the application name in the title -->
+  <title ng-bind="applicationName">My App</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="icp16.css"/>
-  <script src="./public/scripts/angular.js"></script>
 </head>
 
-<body ng-app="spa">
-<div id="nav">
-  <ul>
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/about">About</a></li>
-    <li><a href="#/services">Services</a></li>
-    <li><a href="#/projects">Projects</a></li>
-  </ul>
+<body ng-app="myApp" ng-controller="AppController">
+<!-- Header -->
+<div id="header">
+  <!-- Use ng-bind to display the application name -->
+  <h1 ng-bind="applicationName"></h1>
 </div>
 
-<div id="page-content">
-  <h1>AngularJS Single Page Application</h1>
-  <hr>
-  <div ng-view></div>
+<!-- Content -->
+<div id="content" ng-view></div>
+
+<!-- Footer -->
+<div id="footer">
+  <!-- Use ng-bind to display the current date -->
+  <p>Current Date: {{AppController.currentDate}}</p>
 </div>
+
+<!-- Include the AngularJS script at the end -->
+<script src="./public/scripts/angular.js"></script>
+<!-- Embed the applicationName from config.js into a JavaScript variable -->
+<script>
+  // Define a JavaScript variable to hold the applicationName
+  var applicationName = "{{ applicationName }}";
+</script>
 </body>
 
 </html>
