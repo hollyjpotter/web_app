@@ -5,6 +5,11 @@ const config = require('./modules/config');
 const port = config.server.port;
 const host = config.server.host;
 
+app.use(express.static(__dirname + '/Web_app'));
+// Serve static files from the routes directory
+app.use('/routes', express.static('routes'));
+
+
 // Serve static files from the "public" directory
 app.use(express.static('public'));
 
@@ -14,8 +19,6 @@ app.get('/config', (req, res) => {
     res.json({ applicationName: config.applicationName });
 });
 
-// Serve static files from the routes directory
-app.use('/routes', express.static('routes'));
 
 // Define a route for the root URL ("/")
 app.get('/', (req, res) => {
