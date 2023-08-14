@@ -14,6 +14,9 @@ app.get('/config', (req, res) => {
     res.json({ applicationName: config.applicationName });
 });
 
+// Serve static files from the routes directory
+app.use('/routes', express.static('routes'));
+
 // Define a route for the root URL ("/")
 app.get('/', (req, res) => {
     // Serve the index.html file located in the "public/pages" directory

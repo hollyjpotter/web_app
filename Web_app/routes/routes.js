@@ -1,13 +1,13 @@
-// public/routes/app.routes.js
+// /routes/routes.js
 
 angular.module('myApp').config(['$routeProvider', function ($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'pages/home.html',
+            templateUrl: 'public/pages/home.html',
             controller: 'HomeController'
         })
         .when('/about', {
-            templateUrl: 'pages/about.html',
+            templateUrl: 'public/pages/about.html',
             controller: 'AboutController'
         })
         .when('/data', {
