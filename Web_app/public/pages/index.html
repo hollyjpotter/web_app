@@ -1,20 +1,19 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html ng-app="myApp">
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Set the application name in the title -->
-  <title ng-bind="applicationName">My App</title>
+  <title>{{ appName }}</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+  <script src="scripts/angular.js"></script>
 </head>
 
-<body ng-app="myApp" ng-controller="AppController">
+<body ng-app="myApp" ng-controller="MainController">
 <!-- Header -->
 <div id="header">
-  <!-- Use ng-bind to display the application name -->
-  <h1 ng-bind="applicationName"></h1>
+  <h1>{{applicationName}}</h1>
 </div>
 
 <!-- Content -->
@@ -22,17 +21,9 @@
 
 <!-- Footer -->
 <div id="footer">
-  <!-- Use ng-bind to display the current date -->
-  <p>Current Date: {{AppController.currentDate}}</p>
+  <p>Current Date: {{ currentDate }}</p>
 </div>
 
-<!-- Include the AngularJS script at the end -->
-<script src="./public/scripts/angular.js"></script>
-<!-- Embed the applicationName from config.js into a JavaScript variable -->
-<script>
-  // Define a JavaScript variable to hold the applicationName
-  var applicationName = "{{ applicationName }}";
-</script>
 </body>
 
 </html>
