@@ -18,7 +18,7 @@ app.controller('MainController', function($scope, $http) {
 });
 
 
-// Configure the routing
+/*// Configure the routing
 app.config(function ($routeProvider, $locationProvider) {
     // Set the hash prefix to an empty string (required for compatibility with some servers)
     $locationProvider.hashPrefix('');
@@ -46,4 +46,24 @@ app.config(function ($routeProvider, $locationProvider) {
             templateUrl: 'pages/animals.html',
             controller: 'AnimalsController'
         });
-});
+});*/
+
+app.controller('HomeController', ['$scope', function($scope) {
+
+}]);
+
+app.controller('AboutController', ['$scope', function($scope) {
+
+}]);
+
+app.controller('DataController', ['$scope', function($scope) {
+
+}]);
+
+app.controller('ContactController', ['$scope', function($scope) {
+
+}]);
+
+app.controller('AnimalsController', ['$scope', function($scope) {
+
+}]);
