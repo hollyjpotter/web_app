@@ -1,25 +1,32 @@
 // public/scripts/angular.js
 // Create the AngularJS module and inject 'ngRoute' as a dependency
 
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ["ngRoute"]);
 
-// Define the AngularJS controller
+// public/scripts/angular.js
 app.controller('MainController', function($scope, $http) {
-    // Make an API request to fetch the application name
-    $http.get('/config').then(function(response) {
-        // Set the application name from the API response
-        $scope.applicationName = response.data.applicationName;
-        console.log(applicationName);
-    });
-    // Set the current date in the scope
-    $scope.currentDate = new Date().toLocaleDateString();
+    // Fetch configuration data from the server
+    $http.get('/config')
+        .then(function(response) {
+            $scope.applicationName = response.data.applicationName;
+            $scope.currentDate = new Date().toLocaleDateString();
+        })
+        .catch(function(error) {
+            console.error('Error fetching configuration:', error);
+            // Handle the error
+        });
 });
 
-// // Configure the routing
-// app.config(function ($routeProvider, $locationProvider) {
-//     // Set the hash prefix to an empty string (required for compatibility with some servers)
-//     $locationProvider.hashPrefix('');
-//
-//     // Setup the $routeProvider using .when() for each route
-//     // Add your route configurations here
-// });
+
+// Configure the routing
+app.config(function ($routeProvider, $locationProvider) {
+    // Set the hash prefix to an empty string (required for compatibility with some servers)
+    $locationProvider.hashPrefix('');
+
+    // Setup the $routeProvider using .when() for each route
+    // Add your route configurations here
+    $routeProvider.when('/about', {
+        templateUrl : './views/layouts/about.html', // Use the about.html template
+        controller : 'AboutController' // Optional: Define a controller if needed
+    });
+});

@@ -1,0 +1,18 @@
+/* Apply frosted glass effect to the header */
+.frosted-glass {
+    background: rgba(255, 255, 255, 0.15); /* Adjust the opacity for desired frosted effect */
+    backdrop-filter: blur(10px); /* Adjust the blur value as needed */
+    border-radius: 10px; /* Adjust the border radius for rounded corners */
+    padding: 200px; /* Add padding to make the content look better within the frosted glass */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+/* Center the header horizontally and vertically */
+.header {
+    display: flex;
+    font-family: monospace;
+    color: black;
+    justify-content: center;
+    padding-top: 50px;
+    height: 10vh; /* Adjust the height as needed for your header */
+}
