@@ -1,29 +1,49 @@
+<!--
 <!DOCTYPE html>
 <html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ appName }}</title>
+  &lt;!&ndash; Include AngularJS library (adjust the URL if needed) &ndash;&gt;
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="app.js"></script> &lt;!&ndash; Your AngularJS application script &ndash;&gt;
+</head>
+<body>
+<div id="header">
+  <h1>{{ appName }}</h1>
+</div>
+&lt;!&ndash; Other AngularJS content goes here &ndash;&gt;
+</body>
+</html>
+-->
+<!DOCTYPE html>
+<html>
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ appName }}</title>
+  <title>{{ applicationName }}</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.3/angular-route.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="icp16.css"/>
+  <script src="./public/scripts/angular.js"></script>
 </head>
 
-<body ng-controller="MainController">
-  <!-- Header -->
-  <div id="header">
-    <h1>{{ appName }}</h1>
-  </div>
+<body ng-app="spa">
+<div id="nav">
+  <ul>
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/about">About</a></li>
+    <li><a href="#/services">Services</a></li>
+    <li><a href="#/projects">Projects</a></li>
+  </ul>
+</div>
 
-  <!-- Content -->
-  <div id="content" ng-view></div>
-
-  <!-- Footer -->
-  <div id="footer">
-    <p>Current Date: {{ currentDate }}</p>
-  </div>
-
-  <script src="app.js"></script>
+<div id="page-content">
+  <h1>AngularJS Single Page Application</h1>
+  <hr>
+  <div ng-view></div>
+</div>
 </body>
 
 </html>
