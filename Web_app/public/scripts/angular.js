@@ -26,7 +26,7 @@ app.config(function ($routeProvider, $locationProvider) {
     // Setup the $routeProvider using .when() for each route
     // Add your route configurations here
     $routeProvider.when('/about', {
-        templateUrl : './views/layouts/about.html', // Use the about.html template
+        templateUrl : 'about.html', // Use the about.html template
         controller : 'AboutController' // Optional: Define a controller if needed
     });
 });
