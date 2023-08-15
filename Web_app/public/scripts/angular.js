@@ -60,8 +60,20 @@ app.controller('DataController', ['$scope', function($scope) {
 
 }]);
 
-app.controller('ContactController', ['$scope', function($scope) {
+app.controller('ContactController', ['$scope', '$http', function($scope, $http) {
+    $scope.contact = {};
 
+    $scope.submitForm = function() {
+        $http.post('/api/contact', $scope.contact)
+            .then(function(response) {
+                // Handle success
+                alert('Form submitted successfully!');
+            }, function(error) {
+                // Handle error
+                console.error("Error during form submission:", error);
+                alert('An error occurred. Please try again.');
+            });
+    };
 }]);
 
 app.controller('AnimalsController', ['$scope', function($scope) {
